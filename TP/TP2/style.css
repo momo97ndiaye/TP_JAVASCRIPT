@@ -13,6 +13,7 @@ body{
 .gauche{
     flex: 3;
     height: 100vh;
+    flex-direction: column-reverse;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +92,9 @@ button{
     box-shadow:10px 10px 10px rgba(100, 100, 100, 0.3);
     cursor: pointer;
 }
-
+.btn:hover{
+    background-color: aqua;
+}
 .bloc{
     display: flex;
     height: 50%;
@@ -99,4 +102,18 @@ button{
     background-color: azure;
     border-radius: 10px;
     box-shadow:10px 10px 10px 10px rgba(100, 100, 100, 0.2);
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+}
+.gauche button a{
+    text-decoration: none;
+    font-family: inherit;
+    color: black;
+}
+.gauche button{
+    background-color: inherit;
+    margin: 1rem;
 }

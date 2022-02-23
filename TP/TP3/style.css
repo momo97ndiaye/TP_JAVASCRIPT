@@ -15,7 +15,11 @@ body {
 	padding: 10px;
 	min-height: 100vh;
 }
-
+footer{
+	display: flex;
+	position: absolute;
+	bottom: 0;
+}
 p {
 	margin: 5px 0;
 }

@@ -1,7 +1,6 @@
-etatBtn();
-let tab1 = ["Mon Premier Element","Mon deuxieme Element","Mon Troisieme Element","Mon Quatrieme Element"]
+let tab1 = ["Mon Premier Element","Mon deuxieme Element","Mon Troisieme Element","Mon Quatrieme Element"];
 const elts = document.getElementById('elements')
-const elts1 = document.querySelector('#elements1')
+const elts1 = document.getElementById('elements1')
 tab1.forEach(el => {
     const ul  = document.createElement('ul') 
     ul.innerHTML = `<li>${el}</li>
@@ -15,7 +14,7 @@ const button1 = document.getElementById('left')
 const droite1 = document.getElementById('elements')
 
 for (let i = 0; i < all.length; i++) {
-    all[i].addEventListener('click',function () {
+    all[i].addEventListener('mouseover',function () {
         all[i].classList.toggle('active')     
     })
 }
@@ -26,8 +25,11 @@ button.addEventListener('click',function () {
             if (l.className=='active'
             ) {
                 droite.appendChild(l)
+                l.className=""
                 
             }
+            etatBtn(elts1,button1)
+            etatBtn(elts,button)
         })
 
     })
@@ -38,16 +40,21 @@ button1.addEventListener('click',function () {
             if (l.className=='active'
             ) {
                 droite1.appendChild(l)
+                
             }
+            etatBtn(elts1,button1)
+            etatBtn(elts,button)
         })
 
 })
-    
- function etatBtn(){
-     if (elts1.childNodes.length ==0){
-         button1.disabled = true;
-     }else{
-         button1.disabled =false;
-     }
- }  
- button1.addEventListener('click',alert('hello'))  
+
+etatBtn(elts1,button1);
+function etatBtn(conteneur ,bouton) {
+    if(conteneur.childNodes.length==0 ){
+        bouton.disabled =true;
+        bouton.className="";
+    }else{
+        bouton.disabled = false;
+    }
+    bouton.className="";
+}
